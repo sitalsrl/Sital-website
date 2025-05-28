@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SITAL S.R.L.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -34,6 +34,8 @@
     }
     header .logo {
       height: 50px;
+      max-height: 8vh;
+      width: auto;
     }
     nav {
       display: flex;
@@ -60,16 +62,25 @@
       background: url('azienda.jpg') no-repeat center center/cover;
       min-height: 60vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 4rem 1rem;
     }
+    .hero-logo {
+      max-width: 100%;
+      height: auto;
+      max-height: 12vh;
+      margin-bottom: 1rem;
+    }
     .hero h2 {
-      font-size: 2rem;
-      max-width: 800px;
+      font-size: clamp(1rem, 4vw, 2rem);
+      max-width: 500px;
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      margin: 0;
+      padding: 0 1rem;
     }
     .section {
       padding: 3rem 1rem;
@@ -114,13 +125,28 @@
         width: 100%;
       }
       .hero h2 {
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        max-width: 100%;
+      }
+      .hero-logo {
+        max-height: 10vh;
+        margin-bottom: 0.75rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: clamp(0.9rem, 6vw, 1.2rem);
+        max-width: 100%;
+      }
+      .hero-logo {
+        max-height: 8vh;
+        margin-bottom: 0.5rem;
       }
     }
   </style>
   <script>
     window.addEventListener('scroll', () => {
-      document.querySelectorAll('.section').forEach(el => {
+      document.querySelectorAll('.section').forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
           el.classList.add('visible');
@@ -131,7 +157,7 @@
 </head>
 <body>
   <header>
-    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo">
+    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo" />
     <nav>
       <a href="#chi-siamo">About Us</a>
       <a href="#cosa-facciamo">What We Do</a>
@@ -139,36 +165,52 @@
       <a href="#contatti">Contact</a>
     </nav>
     <div class="language-switcher">
-      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'">
-      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'">
+      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'" />
+      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'" />
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <img src="logo-sital.png" alt="SITAL S.R.L. Logo" class="hero-logo">
-      <h2>For over 30 years, supporting the Italian industry.</h2>
-    </div>
+    <img src="logo-sital.png" alt="SITAL S.R.L. Logo" class="hero-logo" />
+    <h2>For over 30 years, supporting the Italian industry.</h2>
   </section>
 
   <section class="section" id="chi-siamo">
     <h2>About Us</h2>
-    <p>SITAL S.R.L. is based in Villanova Monferrato and part of an international group headquartered in Luxembourg. For over 30 years, we’ve been a key player in managing leftover and clearance stock from the Italian food and non-food industry.</p>
-    <img src="foto-azienda.png" alt="SITAL company photo">
+    <p>
+      SITAL S.R.L. is based in Villanova Monferrato and part of an international group headquartered
+      in Luxembourg. For over 30 years, we’ve been a key player in managing leftover and clearance
+      stock from the Italian food and non-food industry.
+    </p>
+    <img src="foto-azienda.png" alt="SITAL company photo" />
   </section>
 
   <section class="section" id="cosa-facciamo">
     <h2>What We Do</h2>
-    <p>We purchase food and FMCG products directly from Italian manufacturers and redistribute them to alternative markets and the third sector, without interfering with the traditional sales networks of our suppliers.</p>
-    <p>Over the years, we've also specialized in fresh goods and the non-food sector, such as cleaning products and personal hygiene items (toiletries).</p>
-    <img src="muletto-magazzino.jpg" alt="Warehouse">
+    <p>
+      We purchase food and FMCG products directly from Italian manufacturers and redistribute them
+      to alternative markets and the third sector, without interfering with the traditional sales
+      networks of our suppliers.
+    </p>
+    <p>
+      Over the years, we've also specialized in fresh goods and the non-food sector, such as cleaning
+      products and personal hygiene items (toiletries).
+    </p>
+    <img src="muletto-magazzino.jpg" alt="Warehouse" />
   </section>
 
   <section class="section" id="sostenibilita">
     <h2>Sustainability</h2>
-    <p>We are committed to reducing waste and promoting resource circularity. We collaborate with numerous non-profits and charitable organizations by offering products at reduced costs to support their solidarity initiatives.</p>
-    <p>Our warehouses are equipped with solar panels and we use green energy to power our logistics operations.</p>
-    <img src="solidarieta.png" alt="Charities">
+    <p>
+      We are committed to reducing waste and promoting resource circularity. We collaborate with
+      numerous non-profits and charitable organizations by offering products at reduced costs to
+      support their solidarity initiatives.
+    </p>
+    <p>
+      Our warehouses are equipped with solar panels and we use green energy to power our logistics
+      operations.
+    </p>
+    <img src="solidarieta.png" alt="Charities" />
   </section>
 
   <section class="section" id="contatti">
@@ -177,7 +219,11 @@
     <p>Phone: +39 0161 80 11 43</p>
     <p>Address: STRADA STATALE 31 CASALE-VERCELLI 7 - 15030 - VILLANOVA MONFERRATO (AL)</p>
     <div style="width: 100%">
-      <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      <iframe
+        width="100%"
+        height="600"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe>
     </div>
   </section>
 

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SITAL S.R.L.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -65,11 +65,24 @@
       text-align: center;
       padding: 4rem 1rem;
     }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-logo {
+      width: 25vw;
+      max-width: 500px;
+      min-width: 120px;
+      height: auto;
+    }
     .hero h2 {
       font-size: 2rem;
       max-width: 800px;
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      margin: 0;
     }
     .section {
       padding: 3rem 1rem;
@@ -104,6 +117,15 @@
       text-align: center;
       padding: 1rem;
     }
+
+    /* Tablet: 769px - 1024px */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .hero h2 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+      }
+    }
+    /* Smartphone: max-width 768px */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -114,7 +136,8 @@
         width: 100%;
       }
       .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        padding: 0 1rem;
       }
     }
   </style>
@@ -131,7 +154,7 @@
 </head>
 <body>
   <header>
-    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo">
+    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo" />
     <nav>
       <a href="#chi-siamo">Chi siamo</a>
       <a href="#cosa-facciamo">Cosa facciamo</a>
@@ -139,36 +162,54 @@
       <a href="#contatti">Contatti</a>
     </nav>
     <div class="language-switcher">
-      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'">
-      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'">
+      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'" />
+      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'" />
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <img src="logo-sital.png" alt="Logo SITAL S.R.L." class="hero-logo">
+      <img src="logo-sital.png" alt="Logo SITAL S.R.L." class="hero-logo" />
       <h2>Da oltre 30 anni al fianco dell’industria italiana.</h2>
     </div>
   </section>
 
   <section class="section" id="chi-siamo">
     <h2>Chi siamo</h2>
-    <p>SITAL S.R.L. è un’azienda con sede a Villanova Monferrato e parte di un gruppo internazionale con base in Lussemburgo. Da oltre 30 anni siamo un punto di riferimento per la gestione di eccedenze e invenduti dell’industria alimentare e non alimentare italiana.</p>
-    <img src="foto-azienda.png" alt="Foto dell'azienda SITAL">
+    <p>
+      SITAL S.R.L. è un’azienda con sede a Villanova Monferrato e parte di un gruppo internazionale con base in
+      Lussemburgo. Da oltre 30 anni siamo un punto di riferimento per la gestione di eccedenze e invenduti
+      dell’industria alimentare e non alimentare italiana.
+    </p>
+    <img src="foto-azienda.png" alt="Foto dell'azienda SITAL" />
   </section>
 
   <section class="section" id="cosa-facciamo">
     <h2>Cosa facciamo</h2>
-    <p>Acquistiamo prodotti alimentari e di largo consumo direttamente dall’industria italiana, e li ridistribuiamo verso mercati alternativi e realtà del terzo settore, senza interferire con le reti di vendita tradizionali dei nostri fornitori.</p>
-    <p>Negli anni ci siamo specializzati anche nei prodotti freschi e nel settore non-food, come detergenti e articoli per l’igiene personale.</p>
-    <img src="muletto-magazzino.jpg" alt="Magazzino">
+    <p>
+      Acquistiamo prodotti alimentari e di largo consumo direttamente dall’industria italiana, e li
+      ridistribuiamo verso mercati alternativi e realtà del terzo settore, senza interferire con le reti di
+      vendita tradizionali dei nostri fornitori.
+    </p>
+    <p>
+      Negli anni ci siamo specializzati anche nei prodotti freschi e nel settore non-food, come detergenti e
+      articoli per l’igiene personale.
+    </p>
+    <img src="muletto-magazzino.jpg" alt="Magazzino" />
   </section>
 
   <section class="section" id="sostenibilita">
     <h2>Sostenibilità</h2>
-    <p>Il nostro impegno è ridurre gli sprechi e promuovere la circolarità delle risorse. Collaboriamo con numerose associazioni no profit e organizzazioni caritative, offrendo loro prodotti a costi ridotti per completare la propria offerta solidale.</p>
-    <p>I nostri capannoni sono coperti da pannelli fotovoltaici e utilizziamo energia verde per alimentare le nostre attività logistiche.</p>
-    <img src="solidarieta.png" alt="Solidarieta">
+    <p>
+      Il nostro impegno è ridurre gli sprechi e promuovere la circolarità delle risorse. Collaboriamo con numerose
+      associazioni no profit e organizzazioni caritative, offrendo loro prodotti a costi ridotti per completare la
+      propria offerta solidale.
+    </p>
+    <p>
+      I nostri capannoni sono coperti da pannelli fotovoltaici e utilizziamo energia verde per alimentare le nostre
+      attività logistiche.
+    </p>
+    <img src="solidarieta.png" alt="Solidarietà" />
   </section>
 
   <section class="section" id="contatti">
@@ -177,7 +218,11 @@
     <p>Telefono: +39 0161 80 11 43</p>
     <p>Indirizzo: STRADA STATALE 31 CASALE-VERCELLI 7 - 15030 - VILLANOVA MONFERRATO (AL)</p>
     <div style="width: 100%">
-      <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      <iframe
+        width="100%"
+        height="600"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe>
     </div>
   </section>
 
