@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SITAL S.R.L.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,6 +34,8 @@
     }
     header .logo {
       height: 50px;
+      max-height: 8vh;
+      width: auto;
     }
     nav {
       display: flex;
@@ -60,29 +62,25 @@
       background: url('azienda.jpg') no-repeat center center/cover;
       min-height: 60vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 4rem 1rem;
     }
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
     .hero-logo {
-      width: 25vw;
-      max-width: 500px;
-      min-width: 250px;
+      max-width: 100%;
       height: auto;
+      max-height: 12vh;
+      margin-bottom: 1rem;
     }
     .hero h2 {
-      font-size: 2rem;
-      max-width: 800px;
+      font-size: clamp(1rem, 4vw, 2rem);
+      max-width: 500px;
       color: #fff;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
       margin: 0;
+      padding: 0 1rem;
     }
     .section {
       padding: 3rem 1rem;
@@ -117,15 +115,6 @@
       text-align: center;
       padding: 1rem;
     }
-
-    /* Tablet: 769px - 1024px */
-    @media (max-width: 1024px) and (min-width: 769px) {
-      .hero h2 {
-        font-size: 1.5rem;
-        padding: 0 1rem;
-      }
-    }
-    /* Smartphone: max-width 768px */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -136,14 +125,28 @@
         width: 100%;
       }
       .hero h2 {
-        font-size: 1.2rem;
-        padding: 0 1rem;
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        max-width: 100%;
+      }
+      .hero-logo {
+        max-height: 10vh;
+        margin-bottom: 0.75rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: clamp(0.9rem, 6vw, 1.2rem);
+        max-width: 100%;
+      }
+      .hero-logo {
+        max-height: 8vh;
+        margin-bottom: 0.5rem;
       }
     }
   </style>
   <script>
     window.addEventListener('scroll', () => {
-      document.querySelectorAll('.section').forEach(el => {
+      document.querySelectorAll('.section').forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
           el.classList.add('visible');
@@ -168,32 +171,30 @@
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <img src="logo-sital.png" alt="Logo SITAL S.R.L." class="hero-logo" />
-      <h2>Da oltre 30 anni al fianco dell’industria italiana.</h2>
-    </div>
+    <img src="logo-sital.png" alt="Logo SITAL S.R.L." class="hero-logo" />
+    <h2>Da oltre 30 anni al fianco dell’industria italiana.</h2>
   </section>
 
   <section class="section" id="chi-siamo">
     <h2>Chi siamo</h2>
     <p>
-      SITAL S.R.L. è un’azienda con sede a Villanova Monferrato e parte di un gruppo internazionale con base in
-      Lussemburgo. Da oltre 30 anni siamo un punto di riferimento per la gestione di eccedenze e invenduti
-      dell’industria alimentare e non alimentare italiana.
+      SITAL S.R.L. ha sede a Villanova Monferrato ed è parte di un gruppo internazionale con sede
+      principale in Lussemburgo. Da oltre 30 anni siamo un punto di riferimento nella gestione di
+      stock residui e di fine serie dell’industria alimentare e non alimentare italiana.
     </p>
-    <img src="foto-azienda.png" alt="Foto dell'azienda SITAL" />
+    <img src="foto-azienda.png" alt="Foto azienda SITAL" />
   </section>
 
   <section class="section" id="cosa-facciamo">
     <h2>Cosa facciamo</h2>
     <p>
-      Acquistiamo prodotti alimentari e di largo consumo direttamente dall’industria italiana, e li
-      ridistribuiamo verso mercati alternativi e realtà del terzo settore, senza interferire con le reti di
-      vendita tradizionali dei nostri fornitori.
+      Acquistiamo prodotti alimentari e FMCG direttamente dai produttori italiani e li ridistribuiamo
+      a mercati alternativi e al terzo settore, senza interferire con i canali di vendita tradizionali
+      dei nostri fornitori.
     </p>
     <p>
-      Negli anni ci siamo specializzati anche nei prodotti freschi e nel settore non-food, come detergenti e
-      articoli per l’igiene personale.
+      Nel tempo ci siamo anche specializzati nel fresco e nel settore non food, come prodotti per
+      la pulizia e per l’igiene personale (cosmetici).
     </p>
     <img src="muletto-magazzino.jpg" alt="Magazzino" />
   </section>
@@ -201,13 +202,13 @@
   <section class="section" id="sostenibilita">
     <h2>Sostenibilità</h2>
     <p>
-      Il nostro impegno è ridurre gli sprechi e promuovere la circolarità delle risorse. Collaboriamo con numerose
-      associazioni no profit e organizzazioni caritative, offrendo loro prodotti a costi ridotti per completare la
-      propria offerta solidale.
+      Ci impegniamo a ridurre gli sprechi e promuovere la circolarità delle risorse. Collaboriamo
+      con numerose associazioni no-profit e organizzazioni di beneficenza offrendo prodotti a prezzi
+      ridotti per supportare le loro iniziative di solidarietà.
     </p>
     <p>
-      I nostri capannoni sono coperti da pannelli fotovoltaici e utilizziamo energia verde per alimentare le nostre
-      attività logistiche.
+      I nostri magazzini sono dotati di pannelli solari e utilizziamo energia verde per alimentare
+      le nostre operazioni logistiche.
     </p>
     <img src="solidarieta.png" alt="Solidarietà" />
   </section>
