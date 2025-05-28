@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SITAL S.R.L.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    header {
+      background-color: #2e3a48;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    header .logo {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .language-switcher img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+    .hero {
+      background: url('azienda.jpg') no-repeat center center/cover;
+      min-height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      max-width: 800px;
+      color: #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      color: #0d1b2a;
+    }
+    .section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+      border: none;
+    }
+    footer {
+      background: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.section').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo">
+    <nav>
+      <a href="#chi-siamo">About Us</a>
+      <a href="#cosa-facciamo">What We Do</a>
+      <a href="#sostenibilita">Sustainability</a>
+      <a href="#contatti">Contact</a>
+    </nav>
+    <div class="language-switcher">
+      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'">
+      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'">
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img src="logo-sital.png" alt="SITAL S.R.L. Logo" class="hero-logo">
+      <h2>For over 30 years, supporting the Italian industry.</h2>
+    </div>
+  </section>
+
+  <section class="section" id="chi-siamo">
+    <h2>About Us</h2>
+    <p>SITAL S.R.L. is based in Villanova Monferrato and part of an international group headquartered in Luxembourg. For over 30 years, we’ve been a key player in managing leftover and clearance stock from the Italian food and non-food industry.</p>
+    <img src="foto-azienda.png" alt="SITAL company photo">
+  </section>
+
+  <section class="section" id="cosa-facciamo">
+    <h2>What We Do</h2>
+    <p>We purchase food and FMCG products directly from Italian manufacturers and redistribute them to alternative markets and the third sector, without interfering with the traditional sales networks of our suppliers.</p>
+    <p>Over the years, we've also specialized in fresh goods and the non-food sector, such as cleaning products and personal hygiene items (toiletries).</p>
+    <img src="muletto-magazzino.jpg" alt="Warehouse">
+  </section>
+
+  <section class="section" id="sostenibilita">
+    <h2>Sustainability</h2>
+    <p>We are committed to reducing waste and promoting resource circularity. We collaborate with numerous non-profits and charitable organizations by offering products at reduced costs to support their solidarity initiatives.</p>
+    <p>Our warehouses are equipped with solar panels and we use green energy to power our logistics operations.</p>
+    <img src="solidarieta.png" alt="Charities">
+  </section>
+
+  <section class="section" id="contatti">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sitaltrading@asleygroup.com">sitaltrading@asleygroup.com</a></p>
+    <p>Phone: +39 0161 80 11 43</p>
+    <p>Address: STRADA STATALE 31 CASALE-VERCELLI 7 - 15030 - VILLANOVA MONFERRATO (AL)</p>
+    <div style="width: 100%">
+      <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SITAL S.R.L. - All rights reserved</p>
+  </footer>
+</body>
+</html>
+
