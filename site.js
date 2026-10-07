@@ -1,3 +1,4 @@
+if(window.SITAL_HERO){try{const bin=atob(window.SITAL_HERO),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);const u=URL.createObjectURL(new Blob([bytes],{type:"image/webp"}));window.SITAL_HERO_URL=u;document.documentElement.style.setProperty("--hero-image",`url("${u}")`);const img=document.getElementById("companyPhoto");if(img)img.src=u}catch(e){}}
 const T=window.SITAL_I18N;
 const nested=(o,p)=>p.split('.').reduce((a,k)=>a?.[k],o);
 const setText=(lang)=>{
