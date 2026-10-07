@@ -1,234 +1,26 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SITAL S.R.L.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      color: #1a1a1a;
-      background: #fff;
-    }
-    header {
-      background-color: #2e3a48;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
-    header .logo {
-      height: 50px;
-      max-height: 8vh;
-      width: auto;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .language-switcher {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .language-switcher img {
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
-    .hero {
-      background: url('azienda.jpg') no-repeat center center/cover;
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    .hero-logo {
-      max-width: 100%;
-      height: auto;
-      max-height: 12vh;
-      margin-bottom: 1rem;
-    }
-    .hero h2 {
-      font-size: clamp(1rem, 4vw, 2rem);
-      max-width: 500px;
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-      margin: 0;
-      padding: 0 1rem;
-    }
-    .section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .section h2 {
-      font-size: 1.8rem;
-      color: #0d1b2a;
-    }
-    .section img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 1rem;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      margin-top: 1rem;
-      border: none;
-    }
-    footer {
-      background: #0d1b2a;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-direction: column;
-        width: 100%;
-      }
-      .hero h2 {
-        font-size: clamp(1rem, 5vw, 1.5rem);
-        max-width: 100%;
-      }
-      .hero-logo {
-        max-height: 10vh;
-        margin-bottom: 0.75rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .hero h2 {
-        font-size: clamp(0.9rem, 6vw, 1.2rem);
-        max-width: 100%;
-      }
-      .hero-logo {
-        max-height: 8vh;
-        margin-bottom: 0.5rem;
-      }
-    }
-  </style>
-  <script>
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.section').forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    });
-  </script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c2033"><meta name="description" content="SITAL buys overstocks, short-dated products, end-of-line goods, cancelled orders and packaging-change stock.">
+<title>SITAL | We Buy Stocks</title><link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <header>
-    <img src="logo-sital.png" alt="SITAL S.R.L." class="logo" />
-    <nav>
-      <a href="#chi-siamo">Chi siamo</a>
-      <a href="#cosa-facciamo">Cosa facciamo</a>
-      <a href="#sostenibilita">Sostenibilità</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-    <div class="language-switcher">
-      <img src="flag-it.png" alt="Italiano" title="Italiano" onclick="location.href='index.html'" />
-      <img src="flag-en.png" alt="English" title="English" onclick="location.href='index-en.html'" />
-    </div>
-  </header>
-
-  <section class="hero">
-    <img src="logo-sital.png" alt="Logo SITAL S.R.L." class="hero-logo" />
-    <h2>Da oltre 30 anni al fianco dell’industria italiana.</h2>
-  </section>
-
-  <section class="section" id="chi-siamo">
-    <h2>Chi siamo</h2>
-    <p>
-      SITAL S.R.L. ha sede a Villanova Monferrato ed è parte di un gruppo internazionale con sede
-      principale in Lussemburgo. Da oltre 30 anni siamo un punto di riferimento nella gestione di
-      stock residui e di fine serie dell’industria alimentare e non alimentare italiana.
-    </p>
-    <img src="foto-azienda.png" alt="Foto azienda SITAL" />
-  </section>
-
-  <section class="section" id="cosa-facciamo">
-    <h2>Cosa facciamo</h2>
-    <p>
-      Acquistiamo prodotti alimentari e FMCG direttamente dai produttori italiani e li ridistribuiamo
-      a mercati alternativi e al terzo settore, senza interferire con i canali di vendita tradizionali
-      dei nostri fornitori.
-    </p>
-    <p>
-      Nel tempo ci siamo anche specializzati nel fresco e nel settore non food, come prodotti per
-      la pulizia e per l’igiene personale (cosmetici).
-    </p>
-    <img src="muletto-magazzino.jpg" alt="Magazzino" />
-  </section>
-
-  <section class="section" id="sostenibilita">
-    <h2>Sostenibilità</h2>
-    <p>
-      Ci impegniamo a ridurre gli sprechi e promuovere la circolarità delle risorse. Collaboriamo
-      con numerose associazioni no-profit e organizzazioni di beneficenza offrendo prodotti a prezzi
-      ridotti per supportare le loro iniziative di solidarietà.
-    </p>
-    <p>
-      I nostri magazzini sono dotati di pannelli solari e utilizziamo energia verde per alimentare
-      le nostre operazioni logistiche.
-    </p>
-    <img src="solidarieta.png" alt="Solidarietà" />
-  </section>
-
-  <section class="section" id="contatti">
-    <h2>Contatti</h2>
-    <p>Email: <a href="mailto:sitaltrading@asleygroup.com">sitaltrading@asleygroup.com</a></p>
-    <p>Telefono: +39 0161 80 11 43</p>
-    <p>Indirizzo: STRADA STATALE 31 CASALE-VERCELLI 7 - 15030 - VILLANOVA MONFERRATO (AL)</p>
-    <div style="width: 100%">
-      <iframe
-        width="100%"
-        height="600"
-        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=it&amp;q=sital%20srl%20villanova+(Sital%20srl)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      ></iframe>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SITAL S.R.L. - Tutti i diritti riservati</p>
-  </footer>
-</body>
-</html>
+<header><div class="container top"><a class="brand" href="#top"><span class="brand-main">SITAL</span><span class="brand-sub">Food & Non-Food Stocks</span></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#top" data-k="nav.0">Home</a><a href="#sell" data-k="nav.1">Sell your stock</a><a href="#what" data-k="nav.2">What we buy</a><a href="#how" data-k="nav.3">How it works</a><a href="#about" data-k="nav.4">About SITAL</a><a href="#faq" data-k="nav.5">FAQ</a><a href="#contact" data-k="nav.6">Contact</a></nav><div class="actions"><a class="btn btn-orange header-buy" href="mailto:sitaltrading@asleygroup.com?subject=Stock%20purchase%20enquiry" data-k="nav.7">Buy stock →</a><select class="lang" id="lang"><option value="en">EN</option><option value="it">IT</option><option value="fr">FR</option><option value="de">DE</option><option value="es">ES</option></select></div></div></header>
+<main id="top">
+<section class="hero"><div class="container hero-in"><div class="hero-kicker" data-k="hero.0"></div><h1 data-k="hero.1"></h1><div class="multi"><span>COMPRIAMO STOCK.</span><span>NOUS RACHETONS VOS STOCKS.</span><span>WIR KAUFEN LAGERBESTÄNDE.</span><span>COMPRAMOS STOCKS.</span></div><div class="hero-cta"><a class="btn btn-orange" href="#sell" data-k="hero.2"></a><a class="btn btn-outline" href="#how" data-k="hero.3"></a></div></div><div class="hero-note" data-k="hero.4"></div></section>
+<div class="band"><div class="container band-in"><div class="band-item" data-k="values.0"></div><div class="band-item" data-k="values.1"></div><div class="band-item" data-k="values.2"></div></div></div>
+<div class="features"><div class="container features-in" id="features"></div></div>
+<section id="what"><div class="container reveal"><div class="eyebrow" data-k="what.0"></div><h2 class="title" data-k="what.1"></h2><p class="lead" data-k="what.2"></p><div class="cards" id="whatCards"></div></div></section>
+<section class="why"><div class="container why-grid"><div class="why-box reveal"><div class="eyebrow" data-k="why.0"></div><h2 data-k="why.1"></h2><p data-k="why.2"></p><a href="#sell" class="btn btn-orange" data-k="why.3"></a></div><div class="why-items reveal" id="whyItems"></div></div></section>
+<section id="how"><div class="container reveal"><div class="eyebrow" data-k="how.0"></div><h2 class="title" data-k="how.1"></h2><p class="lead" data-k="how.2"></p><div class="steps" id="steps"></div></div></section>
+<section class="protect"><div class="container protect-grid reveal"><div><div class="eyebrow" data-k="protect.0"></div><h2 class="title" data-k="protect.1"></h2><p class="lead" data-k="protect.2"></p><div class="rules" id="rules"></div></div><div class="noitaly"><span data-k="protect.4"></span><small data-k="protect.5"></small></div></div></section>
+<section id="about"><div class="container about-grid reveal"><div><div class="eyebrow" data-k="about.0"></div><h2 class="title" data-k="about.1"></h2><p class="lead" data-k="about.2"></p><div class="facts" id="facts"></div></div><div class="photo"><img src="foto-azienda.png" alt="SITAL warehouse and offices in Villanova Monferrato" loading="lazy"></div></div></section>
+<section class="sustain"><div class="container reveal"><div class="eyebrow" data-k="sustain.0"></div><h2 class="title" data-k="sustain.1"></h2><p class="lead" data-k="sustain.2"></p><div class="cards" id="sustainCards"></div></div></section>
+<section id="faq"><div class="container reveal"><div class="eyebrow">FAQ</div><h2 class="title" data-k="faqTitle"></h2><div class="faq-wrap" id="faqWrap"></div></div></section>
+<section class="sell" id="sell"><div class="container sell-grid reveal"><div><div class="eyebrow" data-k="sell.0"></div><h2 class="title" data-k="sell.1"></h2><p class="lead" data-k="sell.2"></p><ul class="check" id="check"></ul></div><form class="form" id="stockForm"><div class="row"><div class="field"><label data-k="form.0"></label><input id="company" required></div><div class="field"><label data-k="form.1"></label><input id="name" required></div></div><div class="row"><div class="field"><label data-k="form.2"></label><input id="email" type="email" required></div><div class="field"><label data-k="form.3"></label><input id="phone"></div></div><div class="row"><div class="field"><label data-k="form.4"></label><input id="product" required></div><div class="field"><label data-k="form.5"></label><input id="qty"></div></div><div class="row"><div class="field"><label data-k="form.6"></label><input id="expiry"></div><div class="field"><label data-k="form.7"></label><input id="location"></div></div><div class="field"><label data-k="form.8"></label><textarea id="details"></textarea></div><div class="field"><label data-k="form.9"></label><input id="files" type="file" multiple accept=".xlsx,.xls,.csv,.pdf,.jpg,.jpeg,.png,.webp"><div class="hint" data-k="form.10"></div></div><button class="btn btn-orange" style="width:100%" type="submit" data-k="form.11"></button><p class="note" data-k="form.12"></p></form></div></section>
+<section id="contact"><div class="container reveal"><div class="eyebrow" data-k="contact.0"></div><h2 class="title" data-k="contact.1"></h2><div class="contact-grid"><div class="contact-card"><h3>SITAL S.R.L.</h3><div class="line"><strong>Email:</strong> <a href="mailto:sitaltrading@asleygroup.com">sitaltrading@asleygroup.com</a></div><div class="line"><strong>Tel:</strong> <a href="tel:+390161801143">+39 0161 80 11 43</a></div><div class="line"><strong>Mob:</strong> <a href="tel:+393519689399">+39 351 9689399</a></div><div class="contact-actions"><a class="btn btn-orange" href="mailto:sitaltrading@asleygroup.com" data-k="contact.2"></a><a class="btn btn-dark" href="tel:+390161801143" data-k="contact.3"></a></div></div><div class="contact-card"><h3 data-k="contact.4"></h3><div class="line">S.S. 31 n° 7<br>15030 Villanova Monferrato (AL)<br>Italia</div><p class="line" data-k="contact.5"></p><div class="contact-actions"><a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=SITAL+SRL+Villanova+Monferrato" data-k="contact.6"></a></div></div></div></div></section>
+</main>
+<footer><div class="container foot"><div><strong>SITAL S.R.L.</strong><div>© <span id="year"></span> SITAL S.R.L.</div></div><div class="foot-links"><a href="#what" data-k="nav.2"></a><a href="#how" data-k="nav.3"></a><a href="#faq">FAQ</a><a href="#contact" data-k="nav.6"></a></div></div></footer>
+<div class="toast" id="toast"></div><script src="translations.js"></script><script src="site.js"></script>
+</body></html>
